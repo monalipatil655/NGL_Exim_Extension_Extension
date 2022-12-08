@@ -8,7 +8,7 @@ page 50000 "Blanket Export Orders"
                             "Export Order" = CONST(true));
     ApplicationArea = all;
     UsageCategory = Lists;
-
+    //
     layout
     {
         area(content)
