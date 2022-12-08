@@ -455,7 +455,7 @@ page 50001 "Blanket Export Order"
                     {
                         ApplicationArea = all;
                     }
-                    field("e-Commerce Merchant Id"; "e-Commerce Merchant Id")
+                    field("e-Commerce Merchant Id"; "E-Comm. Merchant Id")
                     {
                         ApplicationArea = all;
                     }
@@ -592,8 +592,10 @@ page 50001 "Blanket Export Order"
                     trigger OnAction()
                     var
                         WorkflowsEntriesBuffer: Record "Workflows Entries Buffer";
+                        approvalmgt: Codeunit "Approvals Mgmt.";  //PCPL-25/081222
                     begin
-                        WorkflowsEntriesBuffer.RunWorkflowEntriesPage(RecordId, DATABASE::"Sales Header", "Document Type".AsInteger(), "No.");
+                        //WorkflowsEntriesBuffer.RunWorkflowEntriesPage(RecordId, DATABASE::"Sales Header", "Document Type".AsInteger(), "No.");
+                        approvalmgt.RunWorkflowEntriesPage(RecordId, DATABASE::"Sales Header", "Document Type", "No.");  //PCPL-25/081222
                     end;
                 }
                 // action("St&ructure")

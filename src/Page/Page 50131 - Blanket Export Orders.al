@@ -205,8 +205,10 @@ page 50000 "Blanket Export Orders"
                     trigger OnAction()
                     var
                         WorkflowsEntriesBuffer: Record "Workflows Entries Buffer";
+                        ApprovalMgt: Codeunit "Approvals Mgmt.";
                     begin
-                        WorkflowsEntriesBuffer.RunWorkflowEntriesPage(RecordId, DATABASE::"Sales Header", "Document Type".AsInteger(), "No.");
+                        //WorkflowsEntriesBuffer.RunWorkflowEntriesPage(RecordId, DATABASE::"Sales Header", "Document Type".AsInteger(), "No.");
+                        approvalmgt.RunWorkflowEntriesPage(RecordId, DATABASE::"Sales Header", "Document Type", "No.");  //PCPL-25/081222
                     end;
                 }
             }

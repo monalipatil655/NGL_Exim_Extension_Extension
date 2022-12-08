@@ -794,7 +794,8 @@ page 50003 "Blanket Export Order Subform"
                 Image = "Action";
                 action("Get &Price")
                 {
-                    AccessByPermission = TableData "Sales Price" = R;
+                    //AccessByPermission = TableData "Sales Price" = R;
+                    AccessByPermission = TableData "Price List Line" = R;  //PCPL-25/081222
                     ApplicationArea = Suite;
                     Caption = 'Get &Price';
                     Ellipsis = true;
@@ -809,7 +810,8 @@ page 50003 "Blanket Export Order Subform"
                 }
                 action("Get Li&ne Discount")
                 {
-                    AccessByPermission = TableData "Sales Line Discount" = R;
+                    //AccessByPermission = TableData "Sales Line Discount" = R;
+                    AccessByPermission = TableData "Price List Line" = R;       //PCPL-25/081222
                     ApplicationArea = Suite;
                     Caption = 'Get Li&ne Discount';
                     Ellipsis = true;
@@ -1133,7 +1135,7 @@ page 50003 "Blanket Export Order Subform"
     var
         ItemReferenceMgt: Codeunit "Item Reference Management";
     begin
-        ItemReferenceVisible := ItemReferenceMgt.IsEnabled();
+        //ItemReferenceVisible := ItemReferenceMgt.IsEnabled();
     end;
 
     local procedure ValidateShortcutDimension(DimIndex: Integer)

@@ -84,7 +84,8 @@ page 50160 "Import Order Subform"
                         NoOnAfterValidate();
                         DeltaUpdateTotals();
 #if not CLEAN20                        
-                        OnCrossReferenceNoOnLookup(Rec);
+                        //OnCrossReferenceNoOnLookup(Rec);
+                        OnItemReferenceNoOnLookup(Rec); //PCPL-25/081222
 #endif                        
                         OnItemReferenceNoOnLookup(Rec);
                     end;
@@ -149,7 +150,7 @@ page 50160 "Import Order Subform"
 
                     trigger OnValidate()
                     begin
-                        Rec.RestoreLookupSelection();
+                        //Rec.RestoreLookupSelection();  //PCPL-25/081222
 
                         if Rec."No." = xRec."No." then
                             exit;
@@ -161,7 +162,7 @@ page 50160 "Import Order Subform"
 
                     trigger OnAfterLookup(Selected: RecordRef)
                     begin
-                        Rec.SaveLookupSelection(Selected);
+                        //Rec.SaveLookupSelection(Selected);  //PCPL-25/081222
                     end;
                 }
                 field("Description 2"; "Description 2")
@@ -1310,10 +1311,10 @@ page 50160 "Import Order Subform"
                     ApplicationArea = Basic, Suite;
                     Caption = 'Edit in Excel';
                     Image = Excel;
-                    Promoted = true;
-                    PromotedCategory = Category8;
-                    PromotedIsBig = true;
-                    PromotedOnly = true;
+                    // Promoted = true;
+                    // PromotedCategory = Category8;
+                    // PromotedIsBig = true;
+                    // PromotedOnly = true;
                     Visible = IsSaaSExcelAddinEnabled;
                     ToolTip = 'Send the data in the sub page to an Excel file for analysis or editing';
                     AccessByPermission = System "Allow Action Export To Excel" = X;

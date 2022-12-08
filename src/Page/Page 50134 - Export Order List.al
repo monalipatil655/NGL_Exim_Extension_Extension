@@ -257,7 +257,8 @@ page 50074 "Export Order List"
                     var
                         ApprovalEntries: Page "Approval Entries";
                     begin
-                        ApprovalEntries.Setfilters(DATABASE::"Sales Header", "Document Type", "No.");
+                        //ApprovalEntries.Setfilters(DATABASE::"Sales Header", "Document Type", "No.");
+                        ApprovalEntries.SetRecordFilters(DATABASE::"Sales Header", "Document Type", "No.");  //PCPL-25/081222
                         ApprovalEntries.RUN;
                     end;
                 }
