@@ -548,8 +548,8 @@ page 50001 "Blanket Export Order"
                     CaptionML = ENU = 'Card',
                                 ENN = 'Card';
                     Image = EditLines;
-                    RunObject = Page 21;
-                    RunPageLink = "No." = FIELD("Sell-to Customer No.");
+                    //RunObject = Page 21;              //PCPL-25/241122
+                    //RunPageLink = "No." = FIELD("Sell-to Customer No.");  //PCPL-25/241122
                     ShortCutKey = 'Shift+F7';
                     ApplicationArea = all;
                 }

@@ -12,7 +12,7 @@
   "logo": "",
   "dependencies": [
     {
-      "appId": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
+      "id": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
       "publisher": "Microsoft",
       "name": "India GST",
       "version": "18.2.26217.26490"
