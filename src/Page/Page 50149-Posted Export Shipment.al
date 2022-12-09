@@ -666,10 +666,10 @@ page 50149 "Posted Export Shipment"
         }
     }
 
-    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
-    begin
-        "Export Order" := TRUE;
-    end;
+    //trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+    //begin
+    //   "Export Order" := TRUE;
+    //end;
 
     trigger OnOpenPage()
     begin

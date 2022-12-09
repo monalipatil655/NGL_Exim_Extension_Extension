@@ -1187,10 +1187,10 @@ page 50152 "Posted Export Invoice"
         DocExcStatusVisible := true;
     end;
 
-    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
-    begin
-        "Export Order" := true;
-    end;
+    // trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+    // begin
+    //     "Export Order" := true;
+    // end;
 
     trigger OnOpenPage()
     var
