@@ -19,21 +19,27 @@ page 50167 "Packing List List"
             {
                 field("No."; "No.")
                 {
+                    ApplicationArea = All;
                 }
                 field("Sell-to Customer No."; "Sell-to Customer No.")
                 {
+                    ApplicationArea = All;
                 }
                 field("Sell-to Customer Name"; "Sell-to Customer Name")
                 {
+                    ApplicationArea = All;
                 }
                 field("Location Code"; "Location Code")
                 {
+                    ApplicationArea = All;
                 }
                 field(Status; Status)
                 {
+                    ApplicationArea = All;
                 }
                 field("SO NO."; "SO NO.")
                 {
+                    ApplicationArea = All;
                 }
             }
         }

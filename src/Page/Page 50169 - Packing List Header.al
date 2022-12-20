@@ -13,6 +13,7 @@ page 50169 "Packing List Header"
                 Caption = 'General';
                 field("No."; "No.")
                 {
+                    ApplicationArea = All;
 
                     trigger OnAssistEdit()
                     begin
@@ -22,60 +23,74 @@ page 50169 "Packing List Header"
                 }
                 field("Sell-to Customer No."; "Sell-to Customer No.")
                 {
+                    ApplicationArea = All;
                     Editable = "Sell-to Customer No.Editable";
                 }
                 field("Sell-to Customer Name"; "Sell-to Customer Name")
                 {
+                    ApplicationArea = All;
                     Editable = "Sell-to Customer NameEditable";
                 }
                 field("Sell-to Address"; "Sell-to Address")
                 {
+                    ApplicationArea = All;
                     Editable = "Sell-to AddressEditable";
                 }
                 field("Sell-to Address 2"; "Sell-to Address 2")
                 {
+                    ApplicationArea = All;
                     Editable = "Sell-to Address 2Editable";
                 }
                 field("Sell-to Post Code"; "Sell-to Post Code")
                 {
+                    ApplicationArea = All;
                     Caption = 'Sell-to Post Code/City';
                     Editable = "Sell-to Post CodeEditable";
                 }
                 field("Sell-to City"; "Sell-to City")
                 {
+                    ApplicationArea = All;
                     Editable = "Sell-to CityEditable";
                 }
                 field("Posting Date"; "Posting Date")
                 {
+                    ApplicationArea = All;
                     Caption = 'Creation Date';
                     Editable = "Posting DateEditable";
                 }
                 field("Document Date"; "Document Date")
                 {
+                    ApplicationArea = All;
                     Editable = "Document DateEditable";
                 }
                 field("Requested Delivery Date"; "Requested Delivery Date")
                 {
+                    ApplicationArea = All;
                     Editable = RequestedDeliveryDateEditable;
                 }
                 field("Promised Delivery Date"; "Promised Delivery Date")
                 {
+                    ApplicationArea = All;
                     Editable = "Promised Delivery DateEditable";
                 }
                 field("Salesperson Code"; "Salesperson Code")
                 {
+                    ApplicationArea = All;
                     Editable = "Salesperson CodeEditable";
                 }
                 field("Responsibility Center"; "Responsibility Center")
                 {
+                    ApplicationArea = All;
                     Editable = "Responsibility CenterEditable";
                 }
                 field(Status; Status)
                 {
+                    ApplicationArea = All;
                     Editable = false;
                 }
                 field(Marks; Marks)
                 {
+                    ApplicationArea = All;
                 }
             }
             part(PackingListLines; 50168)
@@ -87,76 +102,96 @@ page 50169 "Packing List Header"
                 Caption = 'Shipping';
                 field("Ship-to Code"; "Ship-to Code")
                 {
+                    ApplicationArea = All;
                     Editable = "Ship-to CodeEditable";
                 }
                 field("Ship-to Name"; "Ship-to Name")
                 {
+                    ApplicationArea = All;
                     Editable = "Ship-to NameEditable";
                 }
                 field("Ship-to Address"; "Ship-to Address")
                 {
+                    ApplicationArea = All;
                     Editable = "Ship-to AddressEditable";
                 }
                 field("Ship-to Address 2"; "Ship-to Address 2")
                 {
+                    ApplicationArea = All;
                     Editable = "Ship-to Address 2Editable";
                 }
                 field("Ship-to Post Code"; "Ship-to Post Code")
                 {
+                    ApplicationArea = All;
                     Caption = 'Ship-to Post Code/City';
                     Editable = "Ship-to Post CodeEditable";
                 }
                 field("Ship-to City"; "Ship-to City")
                 {
+                    ApplicationArea = All;
                     Editable = "Ship-to CityEditable";
                 }
                 field("Location Code"; "Location Code")
                 {
+                    ApplicationArea = All;
                 }
                 field("Shipment Date"; "Shipment Date")
                 {
+                    ApplicationArea = All;
                     Editable = "Shipment DateEditable";
                 }
                 field("Shipping Time"; "Shipping Time")
                 {
+                    ApplicationArea = All;
                     Editable = "Shipping TimeEditable";
                 }
                 field("Shipment Method Code"; "Shipment Method Code")
                 {
+                    ApplicationArea = All;
                     Editable = "Shipment Method CodeEditable";
                 }
                 field("Shipping Agent Code"; "Shipping Agent Code")
                 {
+                    ApplicationArea = All;
                     Editable = "Shipping Agent CodeEditable";
                 }
                 field("Shipping Agent Service Code"; "Shipping Agent Service Code")
                 {
+                    ApplicationArea = All;
                     Editable = ShippingAgentServiceCodeEditab;
                 }
                 field("Package Tracking No."; "Package Tracking No.")
                 {
+                    ApplicationArea = All;
                     Editable = "Package Tracking No.Editable";
                 }
                 field("Bill-to Customer No."; "Bill-to Customer No.")
                 {
+                    ApplicationArea = All;
                 }
                 field("Bill-to Name"; "Bill-to Name")
                 {
+                    ApplicationArea = All;
                 }
                 field("Bill-to Name 2"; "Bill-to Name 2")
                 {
+                    ApplicationArea = All;
                 }
                 field("Bill-to Address"; "Bill-to Address")
                 {
+                    ApplicationArea = All;
                 }
                 field("Bill-to Address 2"; "Bill-to Address 2")
                 {
+                    ApplicationArea = All;
                 }
                 field("Bill-to City"; "Bill-to City")
                 {
+                    ApplicationArea = All;
                 }
                 field("Bill-to Contact"; "Bill-to Contact")
                 {
+                    ApplicationArea = All;
                 }
             }
             group(Export)
@@ -180,25 +215,31 @@ page 50169 "Packing List Header"
                 }
                 field("Final Destination"; "Final Destination")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                 }
                 field("Pre-Carriage"; "Pre-Carriage")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                 }
                 field("Place of Receipt Pre-Carriage"; "Place of Receipt Pre-Carriage")
                 {
+                    ApplicationArea = All;
                 }
                 field(Carriage; Carriage)
                 {
+                    ApplicationArea = All;
                     Editable = false;
                 }
                 field("Vessel/Flight No."; "Vessel/Flight No.")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                 }
                 field("Company Bank Account"; "Company Bank Account")
                 {
+                    ApplicationArea = All;
                     Editable = true;
                 }
             }
@@ -215,6 +256,7 @@ page 50169 "Packing List Header"
                 action("Define Package Details")
                 {
                     Caption = 'Define Package Details';
+                    ApplicationArea = All;
 
                     trigger OnAction()
                     var
@@ -233,6 +275,7 @@ page 50169 "Packing List Header"
                 action("Insert Export Order Lines")
                 {
                     Caption = 'Insert Export Order Lines';
+                    ApplicationArea = All;
 
                     trigger OnAction()
                     var
@@ -267,6 +310,7 @@ page 50169 "Packing List Header"
                 }
                 action("Posted Shipped Packing List")
                 {
+                    ApplicationArea = All;
 
                     trigger OnAction()
                     begin

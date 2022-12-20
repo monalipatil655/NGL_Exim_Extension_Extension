@@ -16,82 +16,102 @@ page 50168 "Packing List Subform"
                 field(Type; Type)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("No."; "No.")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Variant Code"; "Variant Code")
                 {
                     Editable = false;
                     Visible = false;
+                    ApplicationArea = All;
                 }
                 field(Description; Description)
                 {
                     Editable = false;
+                    ApplicationArea = All;
+
                 }
                 field("Appl.-to Item Entry"; "Appl.-to Item Entry")
                 {
+                    ApplicationArea = All;
                 }
                 field("Location Code"; "Location Code")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                 }
                 field(Quantity; Quantity)
                 {
+                    ApplicationArea = All;
                     BlankZero = true;
                     Editable = false;
                 }
                 field("Incentive Type"; "Incentive Type")
                 {
+                    ApplicationArea = All;
                 }
                 field("Claim DDB"; "Claim DDB")
                 {
+                    ApplicationArea = All;
                 }
                 field("Unit of Measure Code"; "Unit of Measure Code")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                 }
                 field("Unit of Measure"; "Unit of Measure")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                 }
                 field("Requested Delivery Date"; "Requested Delivery Date")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                 }
                 field("Promised Delivery Date"; "Promised Delivery Date")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                 }
                 field("Planned Delivery Date"; "Planned Delivery Date")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                 }
                 field("Planned Shipment Date"; "Planned Shipment Date")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                 }
                 field("Shipment Date"; "Shipment Date")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                     Visible = true;
                 }
                 field("Shipping Time"; "Shipping Time")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                 }
                 field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                 }
                 field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
+                    ApplicationArea = All;
                     Editable = false;
                     Visible = false;
                 }
