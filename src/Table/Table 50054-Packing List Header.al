@@ -56,14 +56,14 @@ table 50054 "Packing List Header"
         {
             Caption = 'No.';
 
-            trigger OnValidate()
-            begin
-                IF ("No." <> xRec."No.") THEN BEGIN
-                    fctGetEximSetup;
-                    //cduNoSeriesMgt.TestManual(recEximSetup."Packing List Nos.");  //PCPL-25/191222
-                    "No. Series" := '';
-                END;
-            end;
+            // trigger OnValidate()
+            // begin
+            //     IF ("No." <> xRec."No.") THEN BEGIN
+            //         fctGetEximSetup;
+            //         //cduNoSeriesMgt.TestManual(recEximSetup."Packing List Nos.");  //PCPL-25/191222
+            //         "No. Series" := '';
+            //     END;
+            // end;   //PCPL-25/271222
         }
         field(4; "Bill-to Customer No."; Code[20])
         {

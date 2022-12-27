@@ -132,33 +132,32 @@ page 50168 "Packing List Subform"
         [InDataSet]
         DescriptionEmphasize: Boolean;
 
-    // [Scope('Internal')]
-    // procedure fctGetPackingListLines(var PrecSalesHeader: Record 36; pcodPackingListNo: Code[20])
-    // var
-    //lcduExim: Codeunit 33001004;
-    //lrecSalesLine: Record 37;
-    //lfrmForm: Page 33001012;
-    //lfrmItemFrm: Page 33001016;
-    // begin
-    //     //PCPL-25/191222
+    [Scope('Internal')]
+    procedure fctGetPackingListLines(var PrecSalesHeader: Record 36; pcodPackingListNo: Code[20])
+    var
+        lcduExim: Codeunit 50008;//33001004;   
+        lrecSalesLine: Record 37;
+        lfrmForm: Page 50170;
+        lfrmItemFrm: Page 50171;
+    begin
 
-    //     lfrmForm.fctSetPackingListNo(pcodPackingListNo);
-    //     lfrmForm.SETTABLEVIEW(PrecSalesHeader);   
-    //     lfrmForm.LOOKUPMODE := TRUE;
-    //     IF lfrmForm.RUNMODAL = ACTION::LookupOK THEN BEGIN
-    //         lfrmForm.fctGetSelection(PrecSalesHeader);
-    //         IF PrecSalesHeader.FIND('-') THEN;
-    //         lrecSalesLine.SETRANGE("Document Type", PrecSalesHeader."Document Type");
-    //         lrecSalesLine.SETRANGE("Document No.", PrecSalesHeader."No.");
-    //         //lrecSalesLine.SETFILTER("Qty. to Ship",'>0');//gitl-dev
-    //         lfrmItemFrm.SETTABLEVIEW(lrecSalesLine);
-    //         lfrmItemFrm.LOOKUPMODE := TRUE;
-    //         IF lfrmItemFrm.RUNMODAL = ACTION::LookupOK THEN BEGIN
-    //             lfrmItemFrm.SETTABLEVIEW(lrecSalesLine);
-    //             lcduExim.fctCreatePackingList(pcodPackingListNo, PrecSalesHeader, lrecSalesLine);
-    // END;
-    //   END;
-    //end;
+        lfrmForm.fctSetPackingListNo(pcodPackingListNo);
+        lfrmForm.SETTABLEVIEW(PrecSalesHeader);
+        lfrmForm.LOOKUPMODE := TRUE;
+        IF lfrmForm.RUNMODAL = ACTION::LookupOK THEN BEGIN
+            lfrmForm.fctGetSelection(PrecSalesHeader);
+            IF PrecSalesHeader.FIND('-') THEN;
+            lrecSalesLine.SETRANGE("Document Type", PrecSalesHeader."Document Type");
+            lrecSalesLine.SETRANGE("Document No.", PrecSalesHeader."No.");
+            //lrecSalesLine.SETFILTER("Qty. to Ship",'>0');//gitl-dev
+            lfrmItemFrm.SETTABLEVIEW(lrecSalesLine);
+            lfrmItemFrm.LOOKUPMODE := TRUE;
+            IF lfrmItemFrm.RUNMODAL = ACTION::LookupOK THEN BEGIN
+                lfrmItemFrm.SETTABLEVIEW(lrecSalesLine);
+                lcduExim.fctCreatePackingList(pcodPackingListNo, PrecSalesHeader, lrecSalesLine);
+            END;
+        END;
+    end;
 
     [Scope('Internal')]
     procedure fctShowPackageDtls()
