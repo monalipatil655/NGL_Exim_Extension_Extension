@@ -15,6 +15,11 @@ pageextension 50190 "Sales&Rec_Exim" extends "Sales & Receivables Setup"
                 {
                     ApplicationArea = all;
                 }
+                field("Packing List Nos."; "Packing List Nos.")
+                {
+                    ApplicationArea = All;
+                }
+
             }
         }
     }

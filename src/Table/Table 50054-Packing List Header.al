@@ -1,7 +1,7 @@
 table 50054 "Packing List Header"
 {
-    //DrillDownPageID = 33001102;
-    //LookupPageID = 33001102;
+    DrillDownPageID = 50167;//33001102;
+    LookupPageID = 50167;//33001102;
 
     fields
     {
@@ -56,14 +56,14 @@ table 50054 "Packing List Header"
         {
             Caption = 'No.';
 
-            // trigger OnValidate()
-            // begin
-            //     IF ("No." <> xRec."No.") THEN BEGIN
-            //         fctGetEximSetup;
-            //         //cduNoSeriesMgt.TestManual(recEximSetup."Packing List Nos.");  //PCPL-25/191222
-            //         "No. Series" := '';
-            //     END;
-            // end;   //PCPL-25/271222
+            trigger OnValidate()
+            begin
+                IF ("No." <> xRec."No.") THEN BEGIN
+                    fctGetEximSetup;
+                    cduNoSeriesMgt.TestManual(recEximSetup."Packing List Nos.");
+                    "No. Series" := '';
+                END;
+            end;
         }
         field(4; "Bill-to Customer No."; Code[20])
         {
@@ -783,8 +783,8 @@ table 50054 "Packing List Header"
 
         IF ("No." = '') THEN BEGIN
             fctGetEximSetup;
-            //recEximSetup.TESTFIELD("Packing List Nos.");    //PCPL-25/191222
-            //cduNoSeriesMgt.InitSeries(recEximSetup."Packing List Nos.",xRec."No. Series",0D,"No.","No. Series"); 33000990
+            recEximSetup.TESTFIELD("Packing List Nos.");
+            cduNoSeriesMgt.InitSeries(recEximSetup."Packing List Nos.", xRec."No. Series", 0D, "No.", "No. Series");
         END;
     end;
 
@@ -794,7 +794,7 @@ table 50054 "Packing List Header"
         recCustomer: Record 18;
         recShipToAddr: Record 222;
         blnHasEximSetup: Boolean;
-        //recEximSetup: Record 33000990;        //PCPL-25/191222
+        recEximSetup: Record 311;//33000990;        
         cduNoSeriesMgt: Codeunit 396;
         MS33000990: Label 'Only Active Packing Lists can be deleted.';
         MS33000991: Label 'Do you want to change %1?';
@@ -804,7 +804,7 @@ table 50054 "Packing List Header"
     procedure fctGetEximSetup()
     begin
         IF NOT blnHasEximSetup THEN BEGIN
-            //recEximSetup.GET;       //PCPL-25/191222
+            recEximSetup.GET;
             blnHasEximSetup := TRUE;
         END;
     end;
@@ -813,11 +813,11 @@ table 50054 "Packing List Header"
     procedure fctAssistEdit(): Boolean
     begin
         fctGetEximSetup;
-        //recEximSetup.TESTFIELD("Packing List Nos.");     //PCPL-25//161222
-        // IF cduNoSeriesMgt.SelectSeries(recEximSetup."Packing List Nos.",xRec."No. Series","No. Series") THEN BEGIN   //PCPL-25/191222
-        //   cduNoSeriesMgt.SetSeries("No.");   //PCPL-25/191222
-        //   EXIT(TRUE);    //PCPL-25/191222
-        // END;
+        recEximSetup.TESTFIELD("Packing List Nos.");
+        IF cduNoSeriesMgt.SelectSeries(recEximSetup."Packing List Nos.", xRec."No. Series", "No. Series") THEN BEGIN
+            cduNoSeriesMgt.SetSeries("No.");
+            EXIT(TRUE);
+        END;
     end;
 }
 

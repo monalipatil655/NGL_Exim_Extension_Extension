@@ -16,6 +16,12 @@ tableextension 50163 Sale_Receivalble_Exim extends "Sales & Receivables Setup"
             Description = 'PCPL-EXIM';
 
         }
+        field(50015; "Packing List Nos."; Code[10])
+        {
+            DataClassification = ToBeClassified;
+            TableRelation = "No. Series".Code;
+            Description = 'PCPL-EXIM';
+        }
     }
 
 }

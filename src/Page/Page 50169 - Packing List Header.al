@@ -15,11 +15,11 @@ page 50169 "Packing List Header"
                 {
                     ApplicationArea = All;
 
-                    // trigger OnAssistEdit()
-                    // begin
-                    //     IF fctAssistEdit THEN
-                    //         CurrPage.UPDATE;
-                    // end;     //PCPL-25/271222
+                    trigger OnAssistEdit()
+                    begin
+                        IF fctAssistEdit THEN
+                            CurrPage.UPDATE;
+                    end;     //PCPL-25/271222
                 }
                 field("Sell-to Customer No."; "Sell-to Customer No.")
                 {
@@ -273,35 +273,35 @@ page 50169 "Packing List Header"
             group("F&unctions")
             {
                 Caption = 'F&unctions';
-                action("Update Export Order No")
-                {
-                    Caption = 'Update Export Order No';
-                    ApplicationArea = All;
+                // action("Update Export Order No")
+                // {
+                //     Caption = 'Update Export Order No';
+                //     ApplicationArea = All;
 
-                    trigger OnAction()
-                    var
-                        SalesHeader: Record 36;
-                        PageExportOrdList: page "Export Order List";
-                    begin
-                        TESTFIELD(Status, Status::Active);
-                        TESTFIELD("Sell-to Customer No.");
+                //     trigger OnAction()
+                //     var
+                //         SalesHeader: Record 36;
+                //         PageExportOrdList: page "Export Order List";
+                //     begin
+                //         TESTFIELD(Status, Status::Active);
+                //         TESTFIELD("Sell-to Customer No.");
 
-                        SalesHeader.FILTERGROUP(2);
-                        SalesHeader.SetRange("Export Order", TRUE);
-                        SalesHeader.SETRANGE(Status, SalesHeader.Status::Released);
-                        SalesHeader.SETRANGE("Sell-to Customer No.", "Sell-to Customer No.");
-                        SalesHeader.FILTERGROUP(0);
-                        PageExportOrdList.LOOKUPMODE := TRUE;
-                        PageExportOrdList.SETTABLEVIEW(SalesHeader);
-                        IF PageExportOrdList.RUNMODAL = ACTION::LookupOK THEN
-                            PageExportOrdList.SETSELECTIONFILTER(SalesHeader);
-                        if SalesHeader.FindFirst() then begin
-                            Rec.Get("No.");
-                            rec.Rename(SalesHeader."No.");
-                            Commit();
-                        end;
-                    end;
-                }
+                //         SalesHeader.FILTERGROUP(2);
+                //         SalesHeader.SetRange("Export Order", TRUE);
+                //         SalesHeader.SETRANGE(Status, SalesHeader.Status::Released);
+                //         SalesHeader.SETRANGE("Sell-to Customer No.", "Sell-to Customer No.");
+                //         SalesHeader.FILTERGROUP(0);
+                //         PageExportOrdList.LOOKUPMODE := TRUE;
+                //         PageExportOrdList.SETTABLEVIEW(SalesHeader);
+                //         IF PageExportOrdList.RUNMODAL = ACTION::LookupOK THEN
+                //             PageExportOrdList.SETSELECTIONFILTER(SalesHeader);
+                //         if SalesHeader.FindFirst() then begin
+                //             Rec.Get("No.");
+                //             rec.Rename(SalesHeader."No.");
+                //             Commit();
+                //         end;
+                //     end;
+                // }  //PCPL-25/291222
                 action("Insert Export Order Lines")
                 {
                     Caption = 'Insert Export Order Lines';
