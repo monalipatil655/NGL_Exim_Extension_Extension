@@ -712,31 +712,31 @@ table 50053 "Packing List Line"
             IF (recPackingListHeader.Status <> recPackingListHeader.Status::Active) THEN
                 ERROR(MS33000990);
 
-        // recPkgDetails.RESET;
-        // recPkgDetails.SETRANGE("Packing List No.","Document No.");
-        // recPkgDetails.SETRANGE("Line No.","Line No.");
-        // IF recPkgDetails.FIND('-') THEN
-        //   recPkgDetails.DELETEALL;           //PCPL-25/191222
+        recPkgDetails.RESET;
+        recPkgDetails.SETRANGE("Packing List No.", "Document No.");
+        recPkgDetails.SETRANGE("Line No.", "Line No.");
+        IF recPkgDetails.FIND('-') THEN
+            recPkgDetails.DELETEALL;
     end;
 
     var
         recPackingListHeader: Record 50054;
-        //recPkgDetails: Record 33001048;       //PCPL-25/191222
+        recPkgDetails: Record 50055;//33001048;       
         MS33000990: Label 'Only Active Packing Lists can be deleted.';
 
     [Scope('Internal')]
     procedure fctShowPackageDetails()
     var
-    //lrecPkgDetails: Record 33001048;      //PCPL-25/191222
-    //lpagePackingListPkgDetails: Page 33001103;  //PCPL-25/191222
+        lrecPkgDetails: Record 50055;//33001048;      
+        lpagePackingListPkgDetails: Page 50172;//33001103;  
     begin
-        // lrecPkgDetails.RESET;
-        // lrecPkgDetails.SETRANGE("Packing List No.","Document No.");
-        // /*lfrmPackingListPkgDetails.SETTABLEVIEW(lrecPkgDetails);
-        // lfrmPackingListPkgDetails.RUNMODAL; */ //asmita
+        lrecPkgDetails.RESET;
+        lrecPkgDetails.SETRANGE("Packing List No.", "Document No.");
+        /*lfrmPackingListPkgDetails.SETTABLEVIEW(lrecPkgDetails);
+        lfrmPackingListPkgDetails.RUNMODAL; */ //asmita
 
-        // lpagePackingListPkgDetails.SETTABLEVIEW(lrecPkgDetails);
-        // lpagePackingListPkgDetails.RUNMODAL;  //PCPL-25/191222
+        lpagePackingListPkgDetails.SETTABLEVIEW(lrecPkgDetails);
+        lpagePackingListPkgDetails.RUNMODAL;
 
     end;
 }

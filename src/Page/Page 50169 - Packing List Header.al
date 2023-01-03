@@ -19,7 +19,7 @@ page 50169 "Packing List Header"
                     begin
                         IF fctAssistEdit THEN
                             CurrPage.UPDATE;
-                    end;     //PCPL-25/271222
+                    end;
                 }
                 field("Sell-to Customer No."; "Sell-to Customer No.")
                 {
